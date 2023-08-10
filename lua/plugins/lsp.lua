@@ -27,6 +27,20 @@ return {
         config = require "plugins.configs.mason-lspconfig",
       },
     },
+    opts = {
+      servers = { eslint = {} },
+      setup = {
+        eslint = function()
+          require("lazyvim.util").on_attach(function(client)
+            if client.name == "eslint" then
+              client.server_capabilities.documentFormattingProvider = true
+            elseif client.name == "tsserver" then
+              client.server_capabilities.documentFormattingProvider = false
+            end
+          end)
+        end,
+      },
+    },
     event = "User AstroFile",
     config = require "plugins.configs.lspconfig",
   },
@@ -69,4 +83,8 @@ return {
       },
     },
   },
+  {
+    "nvimdev/lspsaga.nvim",
+    event = "BufRead"
+  }
 }

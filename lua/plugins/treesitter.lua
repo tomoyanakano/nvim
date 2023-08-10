@@ -25,7 +25,9 @@ return {
     },
     incremental_selection = { enable = true },
     indent = { enable = true },
-    autotag = { enable = true },
+    autotag = {
+      enable = true,
+    },
     context_commentstring = { enable = true, enable_autocmd = false },
   },
   config = require "plugins.configs.nvim-treesitter",
