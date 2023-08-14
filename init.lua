@@ -4,6 +4,8 @@ for _, source in ipairs {
   "astronvim.lazy",
   "astronvim.autocmds",
   "astronvim.mappings",
+  "maps",
+  "macos"
 } do
   local status_ok, fault = pcall(require, source)
   if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
@@ -19,12 +21,3 @@ if astronvim.default_colorscheme then
 end
 
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
-require("maps")
-require("macos")
-
--- copilot
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-
-
-
