@@ -85,6 +85,16 @@ return {
   },
   {
     "nvimdev/lspsaga.nvim",
-    event = "BufRead"
-  }
+    event = "BufRead",
+    noremap = true, 
+    silent = true
+  },
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = true
+  },
 }
