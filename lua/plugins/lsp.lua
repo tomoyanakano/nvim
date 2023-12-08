@@ -86,7 +86,7 @@ return {
   {
     "nvimdev/lspsaga.nvim",
     event = "BufRead",
-    noremap = true, 
+    noremap = true,
     silent = true
   },
   {
