@@ -31,3 +31,6 @@ keymap.set('n', '<C-w><left>', '<C-w><')
 keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
+
+-- Code Actions
+keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
